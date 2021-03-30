@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://yamini:mypassword@devcluster.e4afz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://yamini:mypassword@devcluster.e4afz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "mysecret"
 }
