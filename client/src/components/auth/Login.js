@@ -1,7 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { login } from '../../actions/auth';
 
-function Login() {
+function Login({ login }) {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -16,6 +18,7 @@ function Login() {
   const submitHandle = async (e) => {
     e.preventDefault();
     console.log('Login');
+    login(email, password);
   };
   return (
     <Fragment>
@@ -56,4 +59,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default connect(null, { login })(Login);
