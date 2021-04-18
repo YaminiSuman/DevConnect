@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
+import { Link } from 'react-router-dom';
 
 function Dashboard({
   getCurrentProfile,
@@ -24,6 +25,9 @@ function Dashboard({
       ) : (
         <Fragment>
           <p>You have not yet setup a profile, please add some info</p>
+          <Link to='/create-profile' className='btn btn-primary my-1'>
+            Create Profile
+          </Link>
         </Fragment>
       )}
     </Fragment>
