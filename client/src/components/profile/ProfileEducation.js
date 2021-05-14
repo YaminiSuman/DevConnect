@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import moment from 'moment';
 
@@ -23,9 +22,5 @@ const ProfileEducation = ({
     </p>
   </div>
 );
-
-ProfileEducation.propTypes = {
-  education: PropTypes.object.isRequired,
-};
 
 export default ProfileEducation;
