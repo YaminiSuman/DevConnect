@@ -2,13 +2,17 @@ import { connect } from 'react-redux';
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from '../../actions/auth';
-function Navbar({ auth: { isAuthenticated, loading }, logout }) {
+
+const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
-        <li>
-          <Link to='/profiles'>Developers</Link>
-        </li>
+        <Link to='/profiles'>Developers</Link>
+      </li>
+      <li>
+        <Link to='/posts'>Posts</Link>
+      </li>
+      <li>
         <Link to='/dashboard'>
           <i className='fas fa-user' />{' '}
           <span className='hide-sm'>Dashboard</span>
@@ -22,6 +26,7 @@ function Navbar({ auth: { isAuthenticated, loading }, logout }) {
       </li>
     </ul>
   );
+
   const guestLinks = (
     <ul>
       <li>
@@ -35,11 +40,12 @@ function Navbar({ auth: { isAuthenticated, loading }, logout }) {
       </li>
     </ul>
   );
+
   return (
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-code'></i> DevConnector
+          <i className='fas fa-code' /> DevConnector
         </Link>
       </h1>
       {!loading && (
@@ -47,7 +53,7 @@ function Navbar({ auth: { isAuthenticated, loading }, logout }) {
       )}
     </nav>
   );
-}
+};
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
