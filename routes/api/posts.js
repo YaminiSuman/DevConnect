@@ -75,7 +75,10 @@ router.delete('/:id', auth, async (req, res) => {
     if (!req.params.id.match(/^[0-9a-fA-F]{24}$/) || !post) {
       return res.status(404).json({ msg: 'Post not found' });
     }
-
+    // Check user
+    if (post.user.toString() !== req.user.id) {
+      return res.status(401).json({ msg: 'User not authorized' });
+    }
     await post.remove();
 
     res.json({ msg: 'Post removed' });
