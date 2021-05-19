@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://yamini:mypassword@devcluster.e4afz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "mysecret",
+  "githubClientId": "f67f08220b90a98b8dac",
+  "githubSecret": "5941bc66594125084a73f2887cc775066fdf5bf4"
+}
